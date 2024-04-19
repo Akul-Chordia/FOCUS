@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjective</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0E0B0B;
+            padding: 20px;
+            color: white;
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+        }
+
+        .question-container h4 {
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .input-container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            background-color: #1A191A;
+            color: white;
+            transition: border-color 0.3s;
+        }
+
+        .input-container input[type="text"]:hover {
+            border-color: #9A31D8;
+        }
+
+        .submit-btn-container {
+            text-align: center;
+        }
+
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #cc69fb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #9A31D8;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h3 align="center">Answer in as much detail as possible for an accurate reading</h3>
+    <form action="/final" method="post" onsubmit="return validateForm()">
+        <div class="question-container">
+            <h4>1. How would you describe your sleep patterns, and are there any challenges you face in terms of falling asleep or staying asleep??</h4>
+            <div class="input-container">
+                <input type="text" name="answer1" id="answer1" placeholder="Enter your answer...">
+            </div>
+        </div>
+       <div class="question-container">
+            <h4>2. When making decisions, can you elaborate on the factors that influence your impulse control and decision-making process?</h4>
+            <div class="input-container">
+                <input type="text" name="answer2" id="answer2" placeholder="Enter your answer...">
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h4>3. What external stimuli(s) do you require to finish a pending task? What serve as motivating
+                factors?</h4>
+            <div class="input-container">
+                <input type="text" name="answer3" placeholder="Enter your answer...">
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h4>4. When faced with deadlines, what approaches do you typically take to the task at hand?</h4>
+            <div class="input-container">
+                <input type="text" name="answer4" placeholder="Enter your answer...">
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h4>5. Do you consider yourself a rule follower? When have you seen yourself defy authority impulsively?</h4>
+            <div class="input-container">
+                <input type="text" name="answer5" placeholder="Enter your answer...">
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h4>6. Give a brief explaintion on how group conversations go with you, do you ever catch yourself
+                talking too much or inturrupting people?</h4>
+            <div class="input-container">
+                <input type="text" name="answer6" placeholder="Enter your answer...">
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h4>7. How to you plan tasks and future deadlines? Do you see yourself missing things even after reminder?</h4>
+            <div class="input-container">
+                <input type="text" name="answer7" placeholder="Enter your answer...">
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h4>8. Are you fidgeting right now? Do you often catch yourself doing that? (moving your leg, tapping a pen, ect)</h4>
+            <div class="input-container">
+                <input type="text" name="answer8" placeholder="Enter your answer...">
+            </div>
+        </div>
+
+        <div class="submit-btn-container">
+            <button type="submit" class="submit-btn">Submit</button>
+            <div id="error-message" class="error-message" style="display: none;">Please answer all questions.</div>
+        </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            var inputs = document.querySelectorAll('input[type="text"]');
+            var isValid = true;
+
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].value.trim() === '') {
+                    isValid = false;
+                    break;
+                }
+            }
+
+            if (!isValid) {
+                document.getElementById('error-message').style.display = 'block';
+            } else {
+                document.getElementById('error-message').style.display = 'none';
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>

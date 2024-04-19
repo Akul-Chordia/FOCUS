@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0E0B0B;
+            margin: 0;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #1A191A;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid white;
+            background-color: #1A191A;
+            color: white;
+            transition: border-color 0.3s, color 0.3s;
+            border-radius: 10px;
+        }
+
+        input[type="text"]:hover,
+        input[type="email"]:hover {
+            border-bottom-color: #9A31D8;
+            color: #9A31D8;
+        }
+
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        input[type="submit"] {
+            background-color: #cc69fb;
+            color: white;
+            cursor: pointer;
+            outline: none;
+            border-radius: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #9A31D8;
+        }
+
+        label {
+            color: white;
+            margin-top: 20px;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Information Form</h2>
+        <form action="/objective" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
